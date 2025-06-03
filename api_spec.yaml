@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: Plivo 10DLC Profile API - Delete Profile
+  description: API for deleting a specific 10DLC profile in Plivo
+  version: 1.0.0
+  contact:
+    name: Plivo Support
+    url: https://www.plivo.com/support/
+
+servers:
+  - url: https://api.plivo.com/v1/Account/{auth_id}
+    description: Plivo API server
+    variables:
+      auth_id:
+        description: Your Plivo Auth ID
+        default: "MAXXXXXXXXXXXXXXXXXX"
+
+paths:
+  /Profile/{profile_uuid}/:
+    delete:
+      summary: Delete a profile
+      description: Delete an existing 10DLC profile. No request body is required.
+      operationId: deleteProfile
+      parameters:
+        - name: profile_uuid
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the profile to delete
+      responses:
+        '200':
+          description: Profile successfully deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  api_id:
+                    type: string
+                    description: Unique identifier for the API response
+                  message:
+                    type: string
+                    description: Success message
+                required:
+                  - api_id
+                  - message
+        '401':
+          description: Unauthorized - Invalid credentials
+        '404':
+          description: Profile not found
+        '500':
+          description: Internal server error 
