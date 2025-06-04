@@ -7,78 +7,83 @@
     "light": "#212851",
     "dark": "#39cb99"
   },
-      "fonts": {
-        "heading": {
-          "family": "Lato",
-          "weight": 700,
-          "format": "woff2"
-        },
-        "body": {
-          "family": "Lato",
-          "weight": 400,
-          "format": "woff2"
-        }
-      },
+  "fonts": {
+    "heading": {
+      "family": "Lato",
+      "weight": 700,
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Lato",
+      "weight": 400,
+      "format": "woff2"
+    }
+  },
   "favicon": "/fav.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Home",
-        "pages": [
-          "index"
-        ]
-      },
-      {
-        "tab": "Getting started",
-        "groups": [
+        "language": "en",
+        "tabs": [
           {
-            "group": " ",
+            "tab": "Home",
             "pages": [
-              "documentation/en/topics/asset-delivery-of-trackers",
-              "documentation/en/topics/asset-starterskit",
-              "documentation/en/topics/asset-installation-of-tracker-on-asset",
-              "documentation/en/topics/asset-add-users",
-              "documentation/en/topics/assets-start-to-follow-up-your-assets",
-              "documentation/en/topics/asset-platform-plans-and-add-on-s",
-              "documentation/en/topics/general-nav-concepts-used-on-the-platform"
+              "index"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Sensolus platform",
-        "groups": [
+          },
           {
-            "group": " ",
-            "pages": [
-              "documentation/en/topics/application-platorm-index",
-              "documentation/en/topics/general-nav-general-navigation",
-              "documentation/en/topics/localization-localization-introduction",
-              "documentation/en/topics/localization-tag-tracking",
-              "documentation/en/topics/communication-networks"
+            "tab": "Getting started",
+            "groups": [
+              {
+                "group": " ",
+                "pages": [
+                  "documentation/en/topics/asset-delivery-of-trackers",
+                  "documentation/en/topics/asset-starterskit",
+                  "documentation/en/topics/asset-installation-of-tracker-on-asset",
+                  "documentation/en/topics/asset-add-users",
+                  "documentation/en/topics/assets-start-to-follow-up-your-assets",
+                  "documentation/en/topics/asset-platform-plans-and-add-on-s",
+                  "documentation/en/topics/general-nav-concepts-used-on-the-platform"
+                ]
+              }
             ]
+          },
+          {
+            "tab": "Sensolus platform",
+            "groups": [
+              {
+                "group": " ",
+                "pages": [
+                  "documentation/en/topics/application-platorm-index",
+                  "documentation/en/topics/general-nav-general-navigation",
+                  "documentation/en/topics/localization-localization-introduction",
+                  "documentation/en/topics/localization-tag-tracking",
+                  "documentation/en/topics/communication-networks"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API Reference",
+            "openapi": "api_spec.yaml"
           }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "openapi": "api_spec.yaml"
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Website",
-          "href": "https://www.sensolus.com/",
-          "icon": "globe"
-        },
-        {
-          "anchor": "News",
-          "href": "https://www.sensolus.com/about/news/",
-          "icon": "newspaper"
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Website",
+              "href": "https://www.sensolus.com/",
+              "icon": "globe"
+            },
+            {
+              "anchor": "News",
+              "href": "https://www.sensolus.com/about/news/",
+              "icon": "newspaper"
+            }
+          ]
         }
-      ]
-    }
+      }
+    ]
   },
   "logo": {
     "light": "/dark.svg",
