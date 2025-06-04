@@ -1,71 +1,101 @@
 ---
-title: Introduction
-description: "Welcome to the home of your new documentation"
+mode: "custom"
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.png"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.png"
-  alt="Hero Dark"
-/>
+export function openSearch() {
+  document.getElementById('search-bar-entry').click();
+}
 
-## Setting up
+<div className="relative w-full flex items-center justify-center" style={{ height: '24rem', overflow: 'hidden' }}>
+  <div id="background-div" class="absolute inset-0" style={{height: "24rem", backgroundColor: "#212851", backgroundSize: "cover", backgroundPosition: "center"}}></div>
+  
+  <div style={{ position: 'absolute', textAlign: 'center', padding: '0 1rem', maxWidth: '100%', left: '50%', transform: 'translateX(-50%)' }}>
+    <h1
+      className="text-white "
+      style={{
+          marginTop: '4rem',
+          fontSize: '42px',
+          fontWeight: 500,
+          margin: '0',
+          whiteSpace: 'nowrap',
+          textAlign: 'center'
+      }}
+    >
+      Sensolus Documentation
+    </h1>
+    <p className="mt-2 text-white">What can we help you with?</p>
+    <div className="flex items-center justify-center">
+	<div className="flex items-center justify-center" style={{ width: '100%' }}>
+    <button
+      type="button"
+      className="hidden w-full lg:flex items-center text-sm leading-6 rounded-full py-2 pl-3 pr-3 shadow-sm text-gray-400 dark:text-white/50 bg-background-light dark:bg-background-dark dark:brightness-[1.1] dark:ring-1 dark:hover:brightness-[1.25] ring-1 ring-gray-400/20 hover:ring-gray-600/25 dark:ring-gray-600/30 dark:hover:ring-gray-500/30 focus:outline-primary"
+      id="home-search-entry"
+      style={{
+        marginTop: '2rem',
+        maxWidth: '100rem',
+        width: '90%',
+        margin: '2rem auto 0'
+      }}
+      onClick={openSearch}
+    >
+      <svg
+        className="h-4 w-4 ml-1.5 flex-none bg-primary-light hover:bg-gray-600 dark:bg-white/50 dark:hover:bg-white/70"
+        style={{
+          marginRight: '0.5rem',
+         maskImage:
+           'url("https://mintlify.b-cdn.net/v6.5.1/solid/magnifying-glass.svg")',
+         maskRepeat: 'no-repeat',
+         maskPosition: 'center center',
+        }}
+      />
 
-The first step to world-class documentation is setting up your editing environments.
+      Search docs, APIs, and more... 
+    </button>
+    </div>
+	</div>
+  </div>
+</div>
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
+<div
+  style={{
+    marginTop: '0rem',
+    marginBottom: '8rem',
+    maxWidth: '70rem',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingLeft: '1.25rem',
+    paddingRight: '1.25rem'
+  }}
+>
+  <h2 
+    className="text-gray-900 dark:text-gray-200 text-center"
+    style={{
+      marginTop: '2rem',
+      marginBottom: '1rem',
+      fontWeight: '500',
+      fontSize: '2rem'
+    }}
   >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
-
-## Make it yours
-
-Update your docs to your brand and add valuable content for the best user conversion.
-
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/content/components/accordions"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+    Quick <span className="text-primary-dark">Links</span>
+  </h2>
+  <CardGroup cols={3}>
+    <Card title="Getting Started" icon="power-off" href="/documentation/en/topics/asset-delivery-of-trackers" horizontal={true}>
+	  Get started with the Sensolus solution
+	</Card>
+    <Card title="Sensolus platform" icon="display" iconType="solid" href="/documentation/en/topics/application-platorm-index" horizontal={true}>
+      Learn how the platform can deliver business insights and how you can configure it
+	</Card>
+  <Card title="Sensolus Mobile app" icon="mobile" href="https://cloud.sensolus.com/documentation/en/topics/mobile_app_overview.html" horizontal={true}>
+	  Information on the Sensolus mobile app.
+	</Card>
+  <Card title="Devices" icon="desktop" href="https://cloud.sensolus.com/documentation/en/topics/hardware_overview.html" horizontal={true}>
+	  Information on all Sensolus hardware devices
+	</Card>
+  <Card title="Release notes" icon="bolt" iconType="solid" href="https://cloud.sensolus.com/documentation/en/releases/release_notes.html" horizontal={true}>
+      Stay up to date with the new and updated features and devices and read the latest updates on our services.
+	</Card>
+  <Card title="Glossary" icon="book-open" iconType="solid" href="https://cloud.sensolus.com/documentation/en/glossary/glossary_index.html#to_Untitled-index" horizontal={true}>
+      Learn to know the most important terms and keywords used on the platform
+	</Card>
+  </CardGroup>
+</div>
