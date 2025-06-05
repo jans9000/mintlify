@@ -1,0 +1,86 @@
+---
+- title: Markdown-Syntax
+- description: Text, Titel und Formatierung in Standard-Markdown
+- icon: text-size
+---
+
+## Titel
+
+Am besten für Abschnittsüberschriften verwendet.
+
+```md
+## Titles
+```
+
+### Untertitel
+
+Am besten für Unterabschnittsüberschriften verwendet.
+
+```md
+### Subtitles
+```
+
+<Tip>
+  Jeder **Titel** und **Untertitel** erstellt einen Anker und erscheint auch im Inhaltsverzeichnis auf der rechten Seite.
+</Tip>
+
+## Textformatierung
+
+Wir unterstützen die meisten Markdown-Formatierungen. Fügen Sie einfach `**`, `_` oder `~` um den Text herum ein, um ihn zu formatieren.
+
+| Stil            | Wie man es schreibt | Ergebnis            |
+| --------------- | ------------------- | ------------------- |
+| Fett            | `**bold**`          | **fett**            |
+| Kursiv          | `_italic_`          | *kursiv*            |
+| Durchgestrichen | `~strikethrough~`   | ~~durchgestrichen~~ |
+
+Sie können diese kombinieren. Schreiben Sie zum Beispiel `**_bold and italic_**` um ***fett und kursiv*** Text zu erhalten.
+
+Sie müssen HTML verwenden, um hochgestellten und tiefgestellten Text zu schreiben. Das heißt, fügen Sie `<sup>` oder `<sub>` um Ihren Text herum ein.
+
+| Textgröße    | Wie man es schreibt      | Ergebnis                |
+| ------------ | ------------------------ | ----------------------- |
+| Hochgestellt | `<sup>superscript</sup>` | <sup>hochgestellt</sup> |
+| Tiefgestellt | `<sub>subscript</sub>`   | <sub>tiefgestellt</sub> |
+
+## Verknüpfung zu Seiten
+
+Sie können einen Link hinzufügen, indem Sie Text in `[]()` einschließen. Sie würden `[link to google](https://google.com)` schreiben, um [zu Google zu verlinken](https://google.com).
+
+Links zu Seiten in Ihren Dokumenten müssen root-relativ sein. Im Grunde sollten Sie den gesamten Ordnerpfad einschließen. Zum Beispiel `[link to text](/writing-content/text)` verlinkt zur Seite "Text" in unserem Komponenten-Abschnitt.
+
+Relative Links wie `[link to text](../text)` öffnen sich langsamer, da wir sie nicht so leicht optimieren können.
+
+## Blockzitate
+
+### Einzeilig
+
+Um ein Blockzitat zu erstellen, fügen Sie ein `>` vor einem Absatz ein.
+
+> Dorothy folgte ihr durch viele der schönen Räume in ihrem Schloss.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### Mehrzeilig
+
+> Dorothy folgte ihr durch viele der schönen Räume in ihrem Schloss.
+>
+> Die Hexe befahl ihr, die Töpfe und Kessel zu reinigen, den Boden zu fegen und das Feuer mit Holz zu versorgen.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify unterstützt [LaTeX](https://www.latex-project.org)durch die Latex-Komponente.
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```
