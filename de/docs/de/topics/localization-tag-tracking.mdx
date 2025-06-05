@@ -1,0 +1,56 @@
+---
+- title: Lokalisierung für BLE-Tag-Tracker
+---
+
+Erfahren Sie mehr über die verschiedenen Komponenten einer BLE-Tag-Tracking-Lösung und deren Konfiguration.
+
+Manchmal passt die Kosten von vernetzten Trackern nicht zum ROI des Kunden. Für diese Fälle von Assets mit geringerem Wert, aber auch für Kunden, die kleine Tracker wünschen, gibt es die BLE-Tag-Tracking-Lösung.
+
+Der große Unterschied zu den vernetzten Trackern besteht darin, dass Tag-Tracker nicht direkt mit dem Internet verbunden sind, sondern eine Zwischenlösung benötigen
+
+## Tags und Infrastrukturgeräte
+
+BLE-Tag-Tracking ist eine Lösung zur Verfolgung des Standorts von Assets, die immer mindestens zwei Geräte verwendet, um ordnungsgemäß zu funktionieren:
+
+1. **BLE-Tags**: Kleine BLE-Tags werden an einem Asset befestigt. Die Tags sind relativ einfache Geräte, die alle paar Sekunden ein Bluetooth-Low-Energy-Identifikationssignal aussenden. BLE-Tags werden immer mit Batterien betrieben.
+2. **Infrastructure: BLE scanning devices**: Ein Scan-Gerät führt periodische Scans nach nahegelegenen BLE-Tags durch und sendet diese beobachteten Tags an die Sensolus-Plattform. Die Plattform registriert dann den Standort des getaggten Assets mit dem Standort der Scan-Geräte.
+
+BLE-Tag-Tracking unterscheidet sich grundlegend von "vernetzten Trackern", da ein BLE-Tag nicht zu Netzwerkkommunikation fähig ist und sich immer auf Scan-Geräte verlässt. Um den Unterschied zu BLE-Tags zu betonen, könnte man vernetzte Tracker auch als "eigenständige Tracker" bezeichnen.
+
+<Frame caption="Abbildung 1. Vernetzte versus Tag-Tracker">
+  <img src="https://cloud.sensolus.com/documentation/images/illustrations/localization/localization_connected_tag_trackers.png" />
+</Frame>
+
+BLE-Tag-Tracking ist eine Lösung zur Verfolgung von Assets an bestimmten Standorten, an denen die Scan-Geräte installiert werden können. Dies macht es potenziell zu einer guten Lösung für geschlossene Asset-Flüsse. Es ist keine gute Lösung, um Assets zu lokalisieren, die sich an jeden beliebigen Ort bewegen können.
+
+Die geringen Kosten von BLE-Tags können es nützlich machen, Assets mit geringerem Wert zu verfolgen, für die ansonsten die Kosten eines teureren vernetzten Trackers die Lösung nicht kosteneffektiv machen würden. Andererseits müssen auch die Kosten für die Infrastruktur der Scan-Geräte berücksichtigt werden. Im Allgemeinen macht BLE-Tag-Tracking also Sinn, wenn man eine große Anzahl von Assets mit geringerem Wert hat, bei denen es wichtig ist, die Bestandsmengen an bestimmten Standorten zu kennen.
+
+## BLE-Scan-Geräte
+
+Damit eine Bluetooth-Tag-Tracking-Lösung ordnungsgemäß funktioniert, sollten auch mehrere Scan-Geräte aktiv sein. Diese Scan-Geräte hören auf die von den Tags ausgesendeten BLE-Signale. Sie speichern eine Liste der erkannten Tags im Speicher und senden periodisch – zum Beispiel alle 5 Minuten – die Liste der erkannten BLE-Tag-IDs an die Cloud-Plattform. Da die Plattform den Standort der Scan-Geräte kennt, kann sie den Standort der getaggten Assets auf den Standort des Scan-Geräts aktualisieren.
+
+Im Gegensatz zu den Tags sollte das Scan-Gerät also eine Möglichkeit haben, mit der Cloud-Plattform zu kommunizieren. Sie verfügen in der Regel auch über eine Reihe fortgeschrittenerer und konfigurierbarer Funktionen, wie das Abhören nur von Tags eines bestimmten Besitzers, das Einstellen des Scan-Intervalls und des Intervalls, in dem Updates an die Plattform gesendet werden.
+
+Wenn es um das Scannen von BLE-Tags geht, können wir **drei Arten von Scan-Geräten unterscheiden**:
+
+* **Zone Anchors** sind Scan-Geräte, die an einem festen Standort installiert sind – das bedeutet, dass sie sich *nicht* nach der Installation bewegen. "Zone" bedeutet, dass sie Tags in einem bestimmten Bereich scannen. Wir verwenden "Anchor", weil aus der Perspektive des Geschäftsnutzers, der auf die Plattform zugreift, die BLE-Tags als sich bewegend – oder in gewisser Weise 'andockend' – von einem festen Anker zum anderen festen Anker erscheinen. Sie könnten auch sehen, dass andere Anbieter dies als 'Gateway' bezeichnen – weil sie als Informations-Gateway zum Internet fungieren. Wir verwenden den Begriff 'Zone Anchor', weil dies den Zweck genauer beschreibt und nicht mit anderen Netzwerkgeräten verwechselt wird.
+* Ein **Fahrzeug-Tracker** – installiert in einem Van oder LKW – ist ebenfalls in der Lage, nach nahegelegenen BLE-Tags zu scannen. Beachten Sie, dass wir sie auch manchmal 'extern betriebene Tracker' nennen, weil sie von einer externen Stromquelle – der Batterie des Fahrzeugs – betrieben werden. Da diese extern betriebenen Tracker voraussichtlich häufig in Bewegung sind, verfügen sie über ein GPS/GNSS-Modul, damit sie ihre Position selbst bestimmen können. Die Plattform setzt den Standort der getaggten Assets gleich dem letzten bekannten GPS/GNSS-Standort des extern betriebenen Trackers.
+* **Mobiltelefon mit Sensolus-App**: Schließlich verfügen auch Verbraucher-Mobiltelefone über Bluetooth-Fähigkeiten – und auch eine GNSS-Funktionalität. Ein Mobiltelefon mit der Sensolus-App kann ebenfalls nach nahegelegenen BLE-Tags scannen und dies an die Plattform melden. Offensichtlich ist dies ein geringerer Automatisierungsgrad im Vergleich zu den anderen beiden Scan-Gerätetypen.
+
+<Frame caption="">
+  <img src="https://cloud.sensolus.com/documentation/images/illustrations/localization/localization_BLE_scanning_devices.png" />
+</Frame>
+
+Die folgende Tabelle enthält einen Vergleich der verschiedenen Scan-Geräte:
+
+|                                      | BLE-Zone-Anchor ZA3510 (mit Stromversorgung)               | BLE-Zone-Anchor ZA3510 (batteriebetrieben)                 | Fahrzeug-Tracker TRACK 1210                                                    | Sensolus-Mobile-App auf Zebra-Gerät |
+| ------------------------------------ | ---------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------- |
+| Ideale Umgebung                      | Innen Kontrolliert                                         | Innen-außen Kontrolliert                                   | Abgabeorte Kontrolliert                                                        | Innen-außen                         |
+| Tag erhält Standort von              | Standort des Zone Anchors wie auf der Plattform zugewiesen | Standort des Zone Anchors wie auf der Plattform zugewiesen | GPS im Fahrzeug-Tracker                                                        | GPS im Mobilgerät                   |
+| Positionsgenauigkeitsbereich         | \~20m bis zu 200m                                          | \~20m bis zu 200m                                          | \~20m bis zu 200m                                                              | \~20m bis zu 200m                   |
+| Für die Installation benötigte Kabel | Kabel für Stromversorgung                                  | Nein                                                       | Ja, in Lastwagen zur Installation des Trackers im hinteren Teil des Fahrzeugs. | Nein                                |
+| Gleichzeitig gescannte Tags          | max. 2000                                                  | max. 2000                                                  | max. 500                                                                       | max. 500                            |
+
+## BLE-Tag-Tracking versus BLE-Geobeacons
+
+Zunächst ist es leicht, BLE-Tag-Tracking (und BLE-Zonenanker) mit BLE-Geobeacons zu verwechseln. Geobeacons Geobeacon-Lokalisierung sind jedoch völlig unabhängig vom Tag-Tracking, außer dass Bluetooth Low Energy-Signale als technisches Mittel zur Funktion verwendet werden.

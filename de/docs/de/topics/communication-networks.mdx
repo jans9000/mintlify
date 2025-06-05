@@ -1,0 +1,110 @@
+---
+- title: Kommunikation
+---
+
+NB-IoT, Sigfox, 2G, 4G, Mobilfunknetze. Erklärung der Netzwerke, die zur Kommunikation über das Internet verwendet werden.
+
+## Sensolus' Nutzung von Kommunikationsnetzwerken
+
+Die Tracker von Sensolus kommunizieren ihre Daten nicht alle über dasselbe Kommunikationsnetzwerk. Sensolus verfügt über umfangreiche Expertise in der Nutzung von Low-Power-Wide-Area-Netzwerken (LPWAN, auch als LPWA bezeichnet), da diese Netzwerke auf hocheffiziente Energielösungen spezialisiert sind. Sie sind speziell darauf ausgelegt, sehr energieeffiziente Geräte mit großen Übertragungsreichweiten zu kombinieren.
+
+Ein LPWAN ist eine Art drahtloses Telekommunikationsnetzwerk, das für Kommunikation über große Entfernungen bei niedriger Bitrate zwischen Dingen (verbundenen Objekten, Internet-der-Dinge-Objekten) konzipiert ist. LPWAN-Netzwerke sind daher auf die Verbindung von energiesparenden Geräten wie Sensoren und Ortungstrackern zugeschnitten. LPWAN kann privat verwaltet werden (zum Beispiel das LoRA-Netzwerk) oder als Dienst angeboten werden (zum Beispiel das Sigfox-, LoRaWAN- oder NB-IoT-Netzwerk).
+
+Sensolus nutzt die LPWA-Netzwerke Sigfox und NB-IoT, aber auch die bekannteren Mobilfunknetze 2G/4G.
+
+## Vergleich zwischen verschiedenen Kommunikationsnetzwerken
+
+Es existieren verschiedene LPWAN- und Mobilfunknetze. Alle haben Schwächen und Stärken. In diesem Abschnitt werden die Unterschiede zwischen folgenden Kommunikationsnetzwerken beschrieben:
+
+* 2G/4G (Mobilfunknetz der zweiten und vierten Generation) ist eine Gruppe von Funkkommunikationstechnologie-Standards, die für Mobilfunknetze verwendet werden.
+* Sigfox (auch als 0G-Technologie bezeichnet) ist eine LPWAN-Netzwerktechnologie, die Kommunikation unter Verwendung des Kurzstreckenbands von 868 MHz in Europa ermöglicht. Es wird hauptsächlich für IoT- und M2M-Anwendungen mit geringem Durchsatz verwendet.
+* LoRa(WAN). LoRa ist ein privates Funkkommunikationsprotokoll, bei dem Basisstationen für die Kommunikation lokal installiert werden müssen. LoRaWAN ist die öffentliche Version von LoRA und wird typischerweise auf Länderebene eingesetzt.
+* NB-IoT (Narrowband Internet of Things) ist ein LPWAN-Funkkommunikationstechnologie-Standard, der von 3GPP3 für Mobilfunkgeräte und -dienste entwickelt wurde und eine Teilmenge des LTE-Standards ist.
+* LTE-M (Long-Term Evolution Machine Type Communication) ist ein LPWAN-Funkkommunikationstechnologie-Standard, der von 3GPP für Machine-to-Machine- oder IoT-Anwendungen entwickelt wurde. Es ist auch als LTE Cat-M1 bekannt.
+
+|                                                           | 2G/4G                                   | Sigfox                                                     | LoRaWAN                                                        | NB-IoT                                             | LTE-M                                              |
+| --------------------------------------------------------- | --------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| Standard                                                  |                                         | ETSI                                                       | LoRa Alliance                                                  | 3GPP                                               | 3GPP                                               |
+| Spektrum                                                  | Lizenziert                              | Unlizenziert                                               | Unlizenziert                                                   | Lizenziert                                         | Lizenziert                                         |
+| Datendurchsatz                                            | Kontinuierliche Verbindung (bei >1Mbps) | Nachrichten von 12 Bytes. Begrenzte Anzahl von Nachrichten | Nachrichten von 51-250 Bytes. Begrenzte Anzahl von Nachrichten | IP-Verbindung (+/- 21 kbps Downlink, 62,5 Uplink)  | IP-Verbindung (bei \<=1Mbps)                       |
+| Download-Kapazität                                        | Unbegrenzt                              | Sehr niedrig                                               |                                                                | Unbegrenzt                                         | Unbegrenzt                                         |
+| Abdeckung                                                 | "Weltweit"                              | Hauptsächlich EU & ausgewählte Länder in Asien             | National                                                       | Klassische Telekomanbieter                         | Klassische Telekomanbieter                         |
+| Roaming-Vereinbarungen                                    | Ja                                      | Ja                                                         | Nein                                                           | Ja, aber noch keine SIM, die alle Anbieter abdeckt | Ja, aber noch keine SIM, die alle Anbieter abdeckt |
+| Zusätzliche Abdeckung durch Mikro-Basisstationen möglich? |                                         | Ja                                                         | Ja                                                             | Nein                                               | Nein                                               |
+| Batterieverbrauch                                         | Hoch                                    | Niedrigster                                                | Niedrig                                                        | Niedrig Niedrig                                    |                                                    |
+
+## 2G/3G/4G/5G
+
+**Vorteile**
+
+* 2G ist weltweit eingesetzt
+* Lizenziertes Spektrum mit standardisiertem Protokoll = bietet Sicherheit im Betrieb
+* Mehrere kommerzielle Anbieter im gleichen Standard (Orange, Vodafone, etc.) = wettbewerbsfähige Marktpreise
+* Roaming-Vereinbarungen zwischen nationalen und internationalen Anbietern vorhanden, was weltweites Tracking ohne Bedarf an Infrastruktur ermöglicht
+
+**Nachteile**
+
+* 2G/3G/4G-Protokolle sind energieintensiv. Das bedeutet, dass die Batterielebensdauer mehrfach niedriger ist als bei der Kommunikation über LPWAN-Protokolle. Nur empfehlenswert für Anwendungsfälle, die 1 Punkt pro Tag erfordern und weltweiten Betrieb benötigen. Oder wenn ein Gerät mit einer großen Batterie verwendet wird oder es an eine bestehende Batterie angeschlossen wird (wie im Fall der TRACK 12xx Tracker).
+* Das 2G-Protokoll läuft aus. Einige Länder haben es bereits abgeschaltet. Daher werden 2G-Produkte durch 4G oder NB-IoT oder LTE-M ersetzt.
+
+## Sigfox
+
+**Vorteile**
+
+* Niedrigster Energieverbrauch aller Kommunikationsprotokolle
+* Gute Abdeckung in Westeuropa
+* Roaming ist diesem Protokoll inhärent. Tracker funktionieren in allen abgedeckten Zonen
+* Möglichkeit, die Abdeckung mit Mikro-Basisstationen an bestimmten Standorten zu erweitern
+* Relativ günstige Hardware verfügbar
+
+**Nachteile**
+
+* Weiterer Ausbau des Netzwerks verlangsamt sich und Innenraumabdeckung ist oft nicht garantiert
+* Monopolistischer Akteur mit lokalen Betreibern (national) → kein Preiswettbewerb möglich
+* Keine Firmware-Updates möglich
+* Begrenzte Größe der zu sendenden Nachrichten (12 Byte)
+* Begrenzte Anzahl bidirektionaler Nachrichten → kein FOTA über Sigfox
+
+## LoRa(WAN)
+
+**Vorteile**
+
+* LoRa ist ein offener, dokumentierter Standard, der es Lösungsanbietern ermöglicht, die Nutzung des Netzwerks zu definieren (Nutzlast / Bandbreite)
+* LoRa ist ein privater Netzwerkstandard – LPWAN-Netzwerk, das "privat" sein kann. Zum Beispiel selbst installiert und verwaltet. Allerdings sind einige Kunden allergisch gegen lokale Infrastruktur (Basisstationen), da sie diese Dinge nicht installieren und verwalten möchten. Oder sie benötigen auch öffentliche Kommunikation, in diesem Fall sollten sie zu LoRaWAN oder anderen Protokollen greifen.
+* LoRaWAN ist ein vereinbarter Standard für öffentliche Netzwerke, sodass verschiedene Anbieter öffentliche Dienste anbieten können.
+* Da der Standard offen ist, arbeiten verschiedene Anbieter zusammen und es existieren sogar bereits gemeinschaftsbasierte Netzwerke (zum Beispiel Helium).
+
+**Nachteile**
+
+* Netzwerke im Aufbau, daher noch keine Abdeckung an vielen Standorten.
+* Nur eine begrenzte Anzahl von Ländern hat eine landesweite LoRaWAN-Abdeckung.
+* Noch keine vollständigen EU-Roaming-Vereinbarungen für LoRaWAN vorhanden. Daher gut, wenn nur in einem gut abgedeckten Land aktiv. Allerdings reisen die Assets, die wir verfolgen, meist über mehrere Länder.
+
+## NB-IoT
+
+Vorteil
+
+* Wird von traditionellen Telekommunikationsunternehmen bereitgestellt, da es sich um ein lizenziertes Band handelt.
+* Aktiviert auf bestehenden Telekommunikationsnetzen, große Abdeckung, auch in Innenräumen.
+* Ermöglicht FOTA
+* Tiefere Innenraumabdeckung als LTE-M bei gleicher Anzahl von Basisstationen.
+
+Nachteile
+
+* Keine automatische Übergabe zwischen Basisstationen.
+* Kein fester Batterieverbrauch wie bei Sigfox (Netzwerksuchen sind batterieintensiv).
+* Keine Mikro-Basisstationen verfügbar, um lokal Abdeckung hinzuzufügen.
+* Roaming-Vereinbarungen verbessern sich, sind aber noch nicht überall vorhanden.
+
+## LTE-M
+
+Vorteile
+
+* Bereitgestellt von traditionellen Telekommunikationsunternehmen.
+* Ermöglicht FOTA.
+* Automatische Übergabe zwischen Basisstationen.
+
+Nachteile
+
+* Weniger batterieeffizient als NB-IoT für kleine Nachrichten, daher kürzere Batterielebensdauer.
+* Höhere Chipkosten als NB-IoT

@@ -1,0 +1,29 @@
+---
+- title: Einführung
+- description: Beispielabschnitt zur Präsentation von API-Endpunkten
+---
+
+<Note>
+  Wenn Sie keine API-Referenzdokumentation erstellen möchten, können Sie
+  diesen Abschnitt löschen, indem Sie den Ordner api-reference entfernen.
+</Note>
+
+## Willkommen
+
+Es gibt zwei Möglichkeiten, API-Dokumentation zu erstellen: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) und [MDX-Komponenten](https://mintlify.com/docs/api-playground/mdx/configuration). Für das Starter-Kit verwenden wir die folgende OpenAPI-Spezifikation.
+
+<Card title="Pflanzenladen-Endpunkte" icon="leaf" href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json">
+  OpenAPI-Spezifikationsdatei anzeigen
+</Card>
+
+## Authentifizierung
+
+Alle API-Endpunkte werden mit Bearer-Tokens authentifiziert und aus der Spezifikationsdatei entnommen.
+
+```json
+"security": [
+  {
+    "bearerAuth": []
+  }
+]
+```

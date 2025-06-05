@@ -1,0 +1,73 @@
+---
+- title: Schnellstart
+- description: Beginnen Sie in weniger als 5 Minuten mit dem Erstellen großartiger
+    Dokumentation
+---
+
+## Richten Sie Ihre Entwicklung ein
+
+Erfahren Sie, wie Sie Ihre Dokumente lokal aktualisieren und öffentlich bereitstellen können.
+
+### Bearbeiten und Vorschau
+
+<AccordionGroup>
+  <Accordion icon="github" title="Klonen Sie Ihre Dokumente lokal">
+    Während des Onboarding-Prozesses haben wir ein Repository auf Ihrem Github mit Ihrem Dokumentationsinhalt erstellt. Sie finden dieses Repository auf unserem[Dashboard](https://dashboard.mintlify.com). Um das Repository lokal zu klonen, folgen Sie diesen[Anweisungen](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)in Ihrem Terminal.
+  </Accordion>
+
+  <Accordion icon="rectangle-terminal" title="Änderungen in der Vorschau anzeigen">
+    Die Vorschau hilft Ihnen sicherzustellen, dass Ihre Änderungen wie beabsichtigt aussehen. Wir haben eine Befehlszeilenschnittstelle entwickelt, um diese Änderungen lokal zu rendern.
+
+    1. Installieren Sie die
+
+       [Mintlify CLI](https://www.npmjs.com/package/mintlify), um die Dokumentationsänderungen lokal mit diesem Befehl voranzusehen:`npm i -g mintlify`
+    2. Führen Sie den folgenden Befehl im Stammverzeichnis Ihrer Dokumentation aus (wo
+
+       `docs.json` ist):`mintlify dev`
+
+    <Note>
+      Wenn Sie derzeit die veraltete `mint.json` Konfigurationsdatei verwenden, aktualisieren Sie bitte die Mintlify CLI:
+
+      `npm i -g mintlify@latest`
+      Und führen Sie den neuen Upgrade-Befehl in Ihrem Docs-Repository aus:
+
+      `mintlify upgrade`
+      Sie sollten jetzt die neue `docs.json` Konfigurationsdatei verwenden. Sie können die `mint.json` Datei aus Ihrem Repository löschen.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+### Stellen Sie Ihre Änderungen bereit
+
+<AccordionGroup>
+  <Accordion icon="message-bot" title="Installieren Sie unsere Github-App">
+    Unsere Github-App stellt Ihre Änderungen automatisch auf Ihrer Docs-Seite bereit, sodass Sie sich nicht selbst um Bereitstellungen kümmern müssen. Den Link zur Installation finden Sie in Ihrem [dashboard](https://dashboard.mintlify.com). Sobald der Bot erfolgreich installiert wurde, sollte neben dem Commit-Hash des Repos ein Häkchen erscheinen.
+  </Accordion>
+
+  <Accordion icon="rocket" title="Pushen Sie Ihre Änderungen">
+    [Committen und pushen Sie Ihre Änderungen zu Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
+    damit Ihre Änderungen auf Ihrer Docs-Seite aktualisiert werden. Wenn Sie pushen und nicht sehen, dass die Github-App Ihre Änderungen erfolgreich bereitgestellt hat, können Sie Ihre Docs auch manuell über unser [dashboard](https://dashboard.mintlify.com) aktualisieren.
+  </Accordion>
+</AccordionGroup>
+
+## Aktualisieren Sie Ihre Docs
+
+Fügen Sie Inhalte direkt in Ihre Dateien mit MDX-Syntax und React-Komponenten ein. Sie können alle unsere Komponenten verwenden oder sogar Ihre eigenen erstellen.
+
+<CardGroup>
+  <Card title="Fügen Sie Inhalte mit MDX hinzu" icon="file" href="/de/essentials/markdown">
+    Fügen Sie Inhalte zu Ihren Docs mit MDX-Syntax hinzu.
+  </Card>
+
+  <Card title="Fügen Sie Code-Blöcke hinzu" icon="square-code" href="/de/essentials/code">
+    Fügen Sie Code direkt in Ihre Docs mit Syntaxhervorhebung ein.
+  </Card>
+
+  <Card title="Fügen Sie Bilder hinzu" icon="image" href="/de/essentials/images">
+    Fügen Sie Bilder zu Ihren Docs hinzu, um sie ansprechender zu gestalten.
+  </Card>
+
+  <Card title="Fügen Sie benutzerdefinierte Komponenten hinzu" icon="puzzle-piece" href="/de/essentials/reusable-snippets">
+    Fügen Sie Vorlagen zu Ihren Docs hinzu, um sie wiederverwendbarer zu machen.
+  </Card>
+</CardGroup>
