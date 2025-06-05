@@ -37,13 +37,13 @@
               {
                 "group": " ",
                 "pages": [
-                  "documentation/en/topics/asset-delivery-of-trackers",
-                  "documentation/en/topics/asset-starterskit",
-                  "documentation/en/topics/asset-installation-of-tracker-on-asset",
-                  "documentation/en/topics/asset-add-users",
-                  "documentation/en/topics/assets-start-to-follow-up-your-assets",
-                  "documentation/en/topics/asset-platform-plans-and-add-on-s",
-                  "documentation/en/topics/general-nav-concepts-used-on-the-platform"
+                  "docs/en/topics/asset-delivery-of-trackers",
+                  "docs/en/topics/asset-starterskit",
+                  "docs/en/topics/asset-installation-of-tracker-on-asset",
+                  "docs/en/topics/asset-add-users",
+                  "docs/en/topics/assets-start-to-follow-up-your-assets",
+                  "docs/en/topics/asset-platform-plans-and-add-on-s",
+                  "docs/en/topics/general-nav-concepts-used-on-the-platform"
                 ]
               }
             ]
@@ -54,11 +54,11 @@
               {
                 "group": " ",
                 "pages": [
-                  "documentation/en/topics/application-platorm-index",
-                  "documentation/en/topics/general-nav-general-navigation",
-                  "documentation/en/topics/localization-localization-introduction",
-                  "documentation/en/topics/localization-tag-tracking",
-                  "documentation/en/topics/communication-networks"
+                  "docs/en/topics/application-platorm-index",
+                  "docs/en/topics/general-nav-general-navigation",
+                  "docs/en/topics/localization-localization-introduction",
+                  "docs/en/topics/localization-tag-tracking",
+                  "docs/en/topics/communication-networks"
                 ]
               }
             ]
