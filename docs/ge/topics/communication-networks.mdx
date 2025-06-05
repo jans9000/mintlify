@@ -1,0 +1,110 @@
+---
+title: "Communication"
+---
+
+NB-IoT, Sigfox, 2G, 4G, cellular networks. Explanation of the networks used to communicate over the internet.
+
+## Sensolus' usage of communication networks
+
+The trackers of Sensolus are not all communicating their data over the same communication network. Sensolus has a lot of expertise in the usage of low-power-wide-are networks (LPWAN, also referred to as LPWA) as these are networks that are specialized in providing highly energy efficient solutions. They are specifically designed for combining very energy-efficient devices with wide transmission ranges
+
+A LPWAN is a type of wireless telecommunication network designed to allow long-range communications at a low bit rate amongst things (connected objects, Internet-of-Things objects). LPWAN networks are therefore tailored for connecting low power devices such as sensors and locations trackers. LPWAN can be managed privately (for example the LoRA network) or be offered as a service (for example the SIgfox, LoRaWAN or NB-IoT network).
+
+Sensolus uses the Sigfox and NB-IoT LPWA networks, but also the more known cellular networks 2G/4G.
+
+## Comparison between different communication networks
+
+Different LPWAN and cellular networks exist. All have weak and strong points. In this section the differences between following communication networks are described:
+
+* 2G/4G (second- and fourth-generation cellular network) is a group of radio communication technology standards employed for cellular networks.
+* Sigfox (also called 0G technology) is a LPWAN network technology that enables communication using the short-range device band of 868 MHz in Europe. It is primary used for low-throughput IoT and M2M applications.
+* LoRa(WAN) . LoRa is a private radio communication protocol where base stations for communication should be installed locally. LoRaWAN is the public version of LoRA and is typically deployed on country level.
+* NB-IoT (Narrowband Internet of Things) is a LPWAN radio communication technology standard developed by 3GPP3 for cellular devices and services ans is a subset of the LTE standard.
+* LTE-M (Long-Term Evolution Machine Type Communication) is a LPWAN radio communication technology standard developed by 3GPP for machine-to-machine or IoT applications.It is also known as LTE Cat-M1.
+
+|                                                       | 2G/4G                             | Sigfox                                           | LoRaWAN                                             | NB-IoT                                            | LTE-M                                         |
+| ----------------------------------------------------- | --------------------------------- | ------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------- | --------------------------------------------- |
+| Standard                                              |                                   | ETSI                                             | LoRa alliance                                       | 3GPP                                              | 3GPP                                          |
+| Spectrum                                              | Licensed                          | Unlicensed                                       | Unlicensed                                          | Licensed                                          | Licensed                                      |
+| Data throughput                                       | Continuous connection (at >1Mbps) | Messages of 12 bytes. Limited number of messages | Messages of 51-250 bytes.Limited number of messages | IP connection (+/- 21 kbps downlink, 62,5 uplink) | IP connection(at \<=1Mbps)                    |
+| Download capacity                                     | Unlimited                         | Very low                                         |                                                     | Unlimited                                         | Unlimited                                     |
+| Coverage                                              | "Worldwide"                       | Mainly EU & dedicated countries in Asia          | National                                            | Classical telecom providers                       | Classical telecom providers                   |
+| Roaming agreements                                    | Yes                               | Yes                                              | No                                                  | Yes but no SIM yet which covers all providers     | Yes but no SIM yet which covers all providers |
+| Additional coverage via micro base stations possible? |                                   | Yes                                              | Yes                                                 | No                                                | No                                            |
+| Battery consumption                                   | High                              | Lowest                                           | Low                                                 | Low Low                                           |                                               |
+
+## 2G/3G/4G/5G
+
+**Advantages**
+
+* 2G is world-wide deployed
+* Licensed spectrum with standardized protocol = providing certainty of operations
+* Multiple commercial providers in the same standard (Orange, Vodafone, etc.) = competitive market pricing
+* Roaming agreements in place between national and international providers which means world-wide tracking without need for infrastructure
+
+**Disadvantages**
+
+* 2G/3G/4G protocols are energy consuming. This means battery lifetime is multiple times lower than when communicating over LPWAN protocols. Only advisable for use cases requiring 1 point a day and requriring world-wide operations. Or when using a device with a huge battery or attach it to an existing battery (as the case with the TRACK 12xx trackers).
+* The 2G protocol is fading out. Some countries already switched it off. Therefore, 2G products are replaced by 4G or with NB-IoT or LTE-M.
+
+## Sigfox
+
+**Advantages**
+
+* Lowest energy consumption of all communication protocols
+* Good coverage in Western Europe
+* Roaming is inherent in this protocol. Trackers work in all covered zones
+* Possible to extend coverage with micro base stations at specific locations
+* Rather cheap hardware available
+
+**Disadvantages**
+
+* Further roll-out of network is slowing down and indoor coverage is often not guaranteed
+* Monopolistic player with local operators (national) → no price competition possible
+* No firmware updates possible
+* Limited size of messages that can be send (12 byte)
+* Limited number of bidirectional messages → no FOTA over Sigfox
+
+## LoRa(WAN)
+
+**Advantages**
+
+* LoRa is an open, documented standard, which allows solution providers to define how to use the network (payload / bandwidth)
+* LoRa is a private networking standard – LPWAN network which can be “private”. For example, install, manage by yourself. However, some customers are allergic to local infrastructure (base stations) since they don’t want to install and manage this stuff. Or they also need public communication, in that case they should go with LoRaWAN or other protocols.
+* LoRaWAN is an agreed standard for public networks, so different providers can offer public services.
+* As the standard is open different providers work together and even community-based networks exist already (for example Helium).
+
+**Disadvantages**
+
+* Networks in roll-out, so no coverage yet on many locations.
+* Only a limited number of countries have LoRaWAN nationwide coverage.
+* No full EU roaming agreements yet in place for LoRaWAN. Terefore, good when only active in one well covered country. However, the assets we track mostly travel over multiple countries.
+
+## NB-IoT
+
+Advantage
+
+* Provided by traditional telecommunication companies as this is a licensed band.
+* Enabled on the existing telecom networks, great coverage, also indoor.
+* Allows FOTA
+* Deeper indoor than LTE-M when same numbers of base stations.
+
+Disadvantages
+
+* No automatic handover between base-stations.
+* No fixed battery consumption as Sigfox (network searches are battery expensive).
+* No micro base stations available to locally add coverage.
+* Roaming agreements are improving, not everywhere in place.
+
+## LTE-M
+
+Advantages
+
+* Provided by traditional telecommunication companies.
+* Allows FOTA.
+* Automatic handover between base stations.
+
+Disadvantages
+
+* Less battery efficient than NB-IoT for small messages, so shorter battery lifetime.
+* Higher chip cost than NB-IoT
