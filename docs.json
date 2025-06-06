@@ -1,25 +1,30 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
+  "$schema": "https://mintlify.com/docs.json",
   "name": "Sensolus Documentation",
   "colors": {
     "primary": "#212851",
     "light": "#212851",
     "dark": "#39cb99"
   },
-  "fonts": {
-    "heading": {
-      "family": "Lato",
-      "weight": 700,
-      "format": "woff2"
-    },
-    "body": {
-      "family": "Lato",
-      "weight": 400,
-      "format": "woff2"
-    }
+  "logo": {
+    "light": "/dark.svg",
+    "dark": "/light.svg"
   },
   "favicon": "/fav.svg",
+  "navbar": {
+    "links": [
+      {
+        "label": "Login",
+        "href": "https://cloud.sensolus.com/"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Request a demo",
+      "href": "https://www.sensolus.com/request-a-demo/"
+    }
+  },
   "navigation": {
     "languages": [
       {
@@ -72,13 +77,13 @@
           "anchors": [
             {
               "anchor": "Website",
-              "href": "https://www.sensolus.com/",
-              "icon": "globe"
+              "icon": "globe",
+              "href": "https://www.sensolus.com/"
             },
             {
               "anchor": "News",
-              "href": "https://www.sensolus.com/about/news/",
-              "icon": "newspaper"
+              "icon": "newspaper",
+              "href": "https://www.sensolus.com/about/news/"
             }
           ]
         }
@@ -87,45 +92,45 @@
         "language": "de",
         "tabs": [
           {
-            "tab": "Home",
+            "tab": "Startseite",
             "pages": [
-              "index"
+              "de/index"
             ]
           },
           {
-            "tab": "Getting started",
+            "tab": "Erste Schritte",
             "groups": [
               {
                 "group": " ",
                 "pages": [
-                  "docs/de/topics/asset-delivery-of-trackers",
-                  "docs/de/topics/asset-starterskit",
-                  "docs/de/topics/asset-installation-of-tracker-on-asset",
-                  "docs/de/topics/asset-add-users",
-                  "docs/de/topics/assets-start-to-follow-up-your-assets",
-                  "docs/de/topics/asset-platform-plans-and-add-on-s",
-                  "docs/de/topics/general-nav-concepts-used-on-the-platform"
+                  "de/docs/en/topics/asset-delivery-of-trackers",
+                  "de/docs/en/topics/asset-starterskit",
+                  "de/docs/en/topics/asset-installation-of-tracker-on-asset",
+                  "de/docs/en/topics/asset-add-users",
+                  "de/docs/en/topics/assets-start-to-follow-up-your-assets",
+                  "de/docs/en/topics/asset-platform-plans-and-add-on-s",
+                  "de/docs/en/topics/general-nav-concepts-used-on-the-platform"
                 ]
               }
             ]
           },
           {
-            "tab": "Sensolus platform",
+            "tab": "Sensolus Plattform",
             "groups": [
               {
                 "group": " ",
                 "pages": [
-                  "docs/de/topics/application-platorm-index",
-                  "docs/de/topics/general-nav-general-navigation",
-                  "docs/de/topics/localization-localization-introduction",
-                  "docs/de/topics/localization-tag-tracking",
-                  "docs/de/topics/communication-networks"
+                  "de/docs/en/topics/application-platorm-index",
+                  "de/docs/en/topics/general-nav-general-navigation",
+                  "de/docs/en/topics/localization-localization-introduction",
+                  "de/docs/en/topics/localization-tag-tracking",
+                  "de/docs/en/topics/communication-networks"
                 ]
               }
             ]
           },
           {
-            "tab": "API Reference",
+            "tab": "API-Referenz",
             "openapi": "api_spec.yaml"
           }
         ],
@@ -133,35 +138,18 @@
           "anchors": [
             {
               "anchor": "Website",
-              "href": "https://www.sensolus.com/",
-              "icon": "globe"
+              "icon": "globe",
+              "href": "https://www.sensolus.com/"
             },
             {
               "anchor": "News",
-              "href": "https://www.sensolus.com/about/news/",
-              "icon": "newspaper"
+              "icon": "newspaper",
+              "href": "https://www.sensolus.com/about/news/"
             }
           ]
         }
       }
     ]
-  },
-  "logo": {
-    "light": "/dark.svg",
-    "dark": "/light.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Login",
-        "href": "https://cloud.sensolus.com/"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Request a demo",
-      "href": "https://www.sensolus.com/request-a-demo/"
-    }
   },
   "footer": {
     "socials": {
@@ -169,6 +157,18 @@
       "youtube": "https://www.youtube.com/@SensolusTalks",
       "linkedin": "https://www.linkedin.com/company/sensolus/",
       "podcast": "https://open.spotify.com/user/31txln3ghy2rbuhwzzrslj2pnene?si=70e45d0296cd4327"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Lato",
+      "weight": 700,
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Lato",
+      "weight": 400,
+      "format": "woff2"
     }
   }
 }
